@@ -19,3 +19,14 @@ def create_project(project: ProjectCreate, db: Session = Depends(get_db)):
     db.refresh(new_project)
 
     return new_project
+
+@router.get("/", response_model=list[ProjectResponse])
+def get_projects(
+    skip: int = 0,
+    limit: int = 10,
+    db: Session = Depends(get_db)
+):
+
+    projects = db.query(Project).offset(skip).limit(limit).all()
+
+    return projects
