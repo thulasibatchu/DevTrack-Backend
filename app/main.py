@@ -4,6 +4,7 @@ from app.core.database import Base, engine
 from app.api.user_routes import router as user_router
 from app.models import project_model
 from app.api import project_routes
+from app.models import task_model
 
 
 app = FastAPI(title="DevTrack API")
