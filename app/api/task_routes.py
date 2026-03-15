@@ -15,6 +15,7 @@ def create_task(task: TaskCreate, db: Session = Depends(get_db)):
     new_task = Task(
         title=task.title,
         description=task.description,
+        status=task.status,
         project_id=task.project_id,
         assigned_to=task.assigned_to
     )

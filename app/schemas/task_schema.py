@@ -4,8 +4,10 @@ from pydantic import BaseModel
 class TaskCreate(BaseModel):
     title: str
     description: str
+    status: str
     project_id: int
     assigned_to: int
+    
 
 
 class TaskResponse(BaseModel):
